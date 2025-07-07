@@ -64,11 +64,19 @@ category: "宿題"
 2.  AIが `docs/output/system_requirements.md` を参照し、`docs/output/detailed_requirements_specification.md` を生成します。
 3.  生成されたドキュメントには、画面遷移図やデータベース設計（ER図）などがMermaid形式で含まれています。内容を確認し、AIがアイデアをどのように具体的な設計に落とし込んだかを見てみましょう。
 
-### 必須課題4：GitHubリポジトリで管理する
+### 必須課題4：AIに個別詳細設計書を作ってもらう (分割・専門化)
+統合された詳細要件定義書を、各専門領域のファイルに分割してもらいましょう。
+
+**手順：**
+1.  AIチャットで `docs/prompt/generate_detailed_design_files_prompt.md` をメンションし、実行してください。
+2.  AIが `docs/output/detailed_requirements_specification.md` を読み込み、`docs/design/` フォルダ内に5つの詳細設計ファイルを生成します。
+3.  生成された各ファイル（例: `database-design.md`, `ui-ux-design.md`）を開き、内容が専門的な観点で整理されていることを確認しましょう。
+
+### 必須課題5：GitHubリポジトリで管理する
 AIが生成した設計書をGitHubリポジトリにプッシュして、作業記録を保存しましょう。
 
 **手順：**
-1.  GitHubで新しいリポジトリを作成します（privateで作成してください/ただし）。
+1.  GitHubで新しいリポジトリを作成します（privateで作成してください）。
 2.  Cursor Agentに以下のように依頼し、これまでの成果をプッシュしてください。
 
 **コピペ用プロンプト：**
@@ -78,7 +86,7 @@ URLは https://github.com/[あなたのユーザー名]/[あなたのリポジ�
 ```
 
 ## 発展課題（余裕がある方向け）
-- `docs/output/detailed_requirements_specification.md` の内容を基に、Cursor Agentに「この設計書に基づいて、MVPを実装してください」と依頼してみましょう。
+- `docs/design/` 内の各設計書を基に、Cursor Agentに「この設計書に基づいて、MVPを実装してください」と依頼してみましょう。
 - AIが生成したコードでエラーが出たら、エラーメッセージをコピペしてAIに解決を依頼してみましょう。
 
 ## 提出について
@@ -88,7 +96,8 @@ URLは https://github.com/[あなたのユーザー名]/[あなたのリポジ�
 2.  AIとの対話で「これは面白かった」「うまく指示できた」というやり取りがあれば、スクリーンショット（任意）
 
 **提出方法：**
-- Googleフォームから提出（別途共有）
+- SlackにてGithubリポジトリを共有、設定画面から**rsensui@tekion.jpをメンバーに追加してください。**
+- 
 
 **提出期限：**
 - 次回講義の前日まで
